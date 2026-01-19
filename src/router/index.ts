@@ -24,7 +24,7 @@ const router = createRouter({
     routes
 });
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach(async (to, _from, next) => {
     document.title = to.meta.title as string || "Mémoire collective";
 
     next();
