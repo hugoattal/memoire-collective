@@ -29,7 +29,7 @@ import type { ArrayOrNested, NavigationMenuItem } from "@nuxt/ui";
 
 const items: ArrayOrNested<NavigationMenuItem> = [
     {
-        label: "Mention légales",
+        label: "Mentions légales",
         icon: "lucide:scale",
         to: "/legals"
     }
