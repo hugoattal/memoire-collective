@@ -1,0 +1,17 @@
+:root, :host {
+    --font-icon-xxxs: 8px;
+    --font-icon-xxs: 10px;
+    --font-icon-xs: 12px;
+    --font-icon-s: 16px;
+    --font-icon-m: 20px;
+    --font-icon-l: 24px;
+    --font-icon-xl: 32px;
+
+    --font-size-xxs: 0.6rem;
+    --font-size-xs: 0.7rem;
+    --font-size-s: 0.8rem;
+    --font-size-m: 0.9rem;
+    --font-size-l: 1rem;
+    --font-size-xl: 1.1rem;
+    --font-size-xxl: 1.2rem;
+}

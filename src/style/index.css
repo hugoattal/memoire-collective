@@ -1,2 +1,4 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "@/style/length.css";
+@import "@/style/fonts.css";
