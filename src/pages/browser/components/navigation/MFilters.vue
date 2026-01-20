@@ -1,7 +1,9 @@
 <template>
     <div class="filters">
+        <UFormField label="Sélectionnez une personne">
+            <MPeopleFilter />
+        </UFormField>
         <MCategoriesFilter />
-        <MPeopleFilter />
     </div>
 </template>
 
@@ -13,10 +15,10 @@ import MPeopleFilter from "@/pages/browser/components/navigation/MPeopleFilter.v
 <style scoped>
 .filters {
     display: flex;
-    gap: var(--length-l);
-    flex-direction: column;
+    gap: var(--length-s);
     padding: var(--length-l);
     max-width: var(--ui-container);
     margin: auto;
+    align-items: flex-end;
 }
 </style>

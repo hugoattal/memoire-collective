@@ -8,7 +8,7 @@
     <UPageSection
         description=""
         :features="features"
-        title="Rappelez-vous de tous leurs dérapages"
+        title="Souvenons-nous de tous leurs manquements"
     />
 </template>
 

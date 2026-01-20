@@ -18,17 +18,17 @@
         </UDropdownMenu>
     </div>
 </template>
-g
+
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
-import { computed, ref } from "vue";
+import { computed } from "vue";
 
 import { useDataStore } from "@/data/store.ts";
+import { useBrowserStore } from "@/pages/browser/store.ts";
 import type { TPerson } from "@/types/people.ts";
 
-const selectedIndex = ref("jbardella");
-
 const dataStore = useDataStore();
+const browserStore = useBrowserStore();
 
 const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.people)
     .map(([key, person]) => ({
@@ -38,12 +38,12 @@ const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.p
         },
         description: dataStore.groups[person.group]?.name,
         onSelect: () => {
-            selectedIndex.value = key;
+            browserStore.selectedPerson = key;
         }
     }))
 );
 
-const selectedPerson = computed<TPerson | undefined>(() => dataStore.people[selectedIndex.value]);
+const selectedPerson = computed<TPerson | undefined>(() => dataStore.people[browserStore.selectedPerson]);
 </script>
 
 <style scoped>

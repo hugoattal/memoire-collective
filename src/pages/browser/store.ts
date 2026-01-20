@@ -9,6 +9,7 @@ export const useBrowserStore = defineStore(
         const urlParams = new URLSearchParams(window.location.search);
 
         const filters = ref<Array<string>>([]);
+        const selectedPerson = ref<string>("mlepen");
 
         if (urlParams.has("filter")) {
             filters.value = urlParams.get("filter")?.split(",") ?? [];
@@ -19,7 +20,8 @@ export const useBrowserStore = defineStore(
         });
 
         return {
-            filters
+            filters,
+            selectedPerson
         };
     }
 );
