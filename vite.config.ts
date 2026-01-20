@@ -3,6 +3,8 @@ import vue from "@vitejs/plugin-vue";
 import * as path from "path";
 import { defineConfig } from "vite";
 
+import { githubFallbackPlugin } from "./src/githubFallback.plugin.ts";
+
 export default defineConfig({
     plugins: [
         vue(),
@@ -13,7 +15,8 @@ export default defineConfig({
                     primary: "red"
                 }
             }
-        })
+        }),
+        githubFallbackPlugin()
     ],
     resolve: {
         alias: {
