@@ -10,6 +10,7 @@ export const categories = {
         icon: "lucide:newspaper",
         children: {
             journalistes: "Pression sur les journalistes",
+            presse: "Entraves à la libertés de la presse",
             procedures: "Procédures-bâillons"
         }
     },
@@ -70,6 +71,7 @@ export const categories = {
         children: {
             corruption: "Corruption",
             detournement: "Détournement de fonds publics",
+            escroquerie: "Escroquerie",
             fraude: "Fraude fiscale",
             obstruction: "Obstruction à la justice"
         }

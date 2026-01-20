@@ -11,7 +11,8 @@ export type TEvent = {
     // Les affaires liées à cet événement
     affair?: TMaybeArray<string>;
     // Les catégories liées à cet événement
-    category?: TMaybeArray<string>;
+    categories?: Array<string>;
+    category?: string;
     content: string;
     // Si cet événement est caché dans la timeline globale (si c'est une réponse à une personnalité par exemple)
     hidden?: boolean;
