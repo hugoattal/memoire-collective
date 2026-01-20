@@ -23,7 +23,7 @@
             <slot />
         </UMain>
 
-        <USeparator icon="lucide:brain" />
+        <USeparator icon="lucide:save" />
 
         <UFooter>
             <template #left>

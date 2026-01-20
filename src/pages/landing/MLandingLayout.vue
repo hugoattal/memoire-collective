@@ -31,43 +31,52 @@ const links: Array<ButtonProps> = [
 
 const features: Array<PageFeatureProps> = [
     {
-        description: "Les promesses non tenues, les manipulations de données pour tromper l'opinion, et les fakes news délibérément diffusée.",
+        description: "Les promesses non tenues, les manipulations de données et la diffusion délibérée de fausses informations (fake news).",
         icon: "lucide:tv",
         title: "Mensonges et désinformation"
-    }, {
-        description: "Les propos discriminatoire, racistes, sexistes, antisémite, islamophobe ou homophobes. Les attaques personnelles et les appels à la haine.",
+    },
+    {
+        description: "Les propos discriminatoires, racistes, sexistes, antisémites, islamophobes, homophobes, les attaques personnelles et les appels à la haine.",
         icon: "lucide:shield-ban",
-        title: "Dérapages et comportement inappropriés"
-    }, {
-        description: "La fraude fiscale, le détournement de fonds publics, le harcèlement, la corruption, l'obstruction à la justice.",
+        title: "Dérapages et comportements inappropriés"
+    },
+    {
+        description: "La fraude fiscale, le détournement de fonds publics, le harcèlement, la corruption et l'obstruction à la justice.",
         icon: "lucide:gavel",
         title: "Affaires judiciaires"
-    }, {
+    },
+    {
         description: "Erreurs graves dans la gestion de dossiers, refus d'assumer ses échecs, clientélisme et favoritisme.",
         icon: "lucide:bomb",
         title: "Incompétence et irresponsabilité"
-    }, {
-        description: "Enrichissement personnel, cumul de mandats, rémunération excessive, lobbying.",
+    },
+    {
+        description: "Enrichissement personnel, cumul des mandats, rémunérations excessives et lobbying.",
         icon: "lucide:gift",
         title: "Conflits d’intérêts"
-    }, {
-        description: "Incohérence idéologique, revirage idéologique, populisme et double discours.",
+    },
+    {
+        description: "Incohérence idéologique, revirements opportunistes, populisme et double discours.",
         icon: "lucide:mic-vocal",
         title: "Opportunisme et double discours"
-    }, {
-        description: "Contournement des règles, modification des lois pour ses intérêts et ingérence dans la justice.",
+    },
+    {
+        description: "Contournement des règles, modification des lois pour servir ses intérêts et ingérence dans la justice.",
         icon: "lucide:landmark",
         title: "Mépris des institutions"
-    }, {
-        description: "Pression sur des journalistes, procédure baillon, usage excessif de la force.",
+    },
+    {
+        description: "Pression sur les journalistes, procédures-bâillons et usage excessif de la force.",
         icon: "lucide:newspaper",
-        title: "Authoritarisme et censure"
-    }, {
-        description: "Embauche de proches sans compétence à des postes clés, réseaux d'influence",
+        title: "Autoritarisme et censure"
+    },
+    {
+        description: "Embauche de proches incompétents à des postes clés et réseaux d'influence.",
         icon: "lucide:handshake",
         title: "Népotisme et copinage"
     }
-];
+]
+;
 </script>
 
 <style scoped>
