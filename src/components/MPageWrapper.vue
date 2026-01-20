@@ -1,6 +1,11 @@
 <template>
     <div class="page-wrapper">
-        <UHeader title="Mémoire collective">
+        <UHeader>
+            <template #left>
+                <RouterLink to="/">
+                    <MLogo />
+                </RouterLink>
+            </template>
             <MNavigationMenu />
             <template #right>
                 <UColorModeButton />
