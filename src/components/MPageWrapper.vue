@@ -1,68 +1,18 @@
 <template>
     <div class="page-wrapper">
-        <UHeader>
-            <template #left>
-                <RouterLink to="/">
-                    <MLogo />
-                </RouterLink>
-            </template>
-            <MNavigationMenu />
-            <template #right>
-                <UColorModeButton />
-                <UButton
-                    color="neutral"
-                    icon="cib:github"
-                    target="_blank"
-                    to="https://github.com/hugoattal/memoire-collective"
-                    variant="ghost"
-                />
-            </template>
-        </UHeader>
-
+        <MHeader />
         <UMain>
             <slot />
         </UMain>
-
         <USeparator icon="lucide:save" />
-
-        <UFooter>
-            <template #left>
-                <p class="licence">
-                    <UIcon
-                        class="icon"
-                        name="lucide:scale"
-                    />
-                    GPL-3.0 license
-                </p>
-            </template>
-
-            <template #right>
-                <UButton
-                    color="neutral"
-                    icon="simple-icons:github"
-                    target="_blank"
-                    to="https://github.com/hugoattal/memoire-collective"
-                    variant="ghost"
-                />
-            </template>
-        </UFooter>
+        <MFooter />
     </div>
 </template>
 
 <script setup lang="ts">
-
+import MFooter from "@/components/MFooter.vue";
+import MHeader from "@/components/MHeader.vue";
 </script>
 
 <style scoped>
-.licence {
-    font-size: var(--text-sm);
-    color: var(--ui-text-muted);
-    display: flex;
-    gap: var(--length-xs);
-    align-items: center;
-
-    .icon {
-        font-size: var(--font-icon-s);
-    }
-}
 </style>

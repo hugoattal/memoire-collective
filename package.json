@@ -1,38 +1,43 @@
 {
-  "name": "memoire-collective",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@nuxt/ui": "^4.3.0",
-    "tailwindcss": "^4.1.18",
-    "vue": "^3.5.24",
-    "vue-router": "^4.6.4"
-  },
-  "devDependencies": {
-    "@luna-park/eslint-config": "^1.0.2",
-    "@types/node": "^24.10.1",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/tsconfig": "^0.8.1",
-    "eslint": "^9.39.2",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.53.1",
-    "vite": "npm:rolldown-vite@7.2.5",
-    "vue-tsc": "^3.1.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "vite": "npm:rolldown-vite@7.2.5"
+    "name": "memoire-collective",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc -b && vite build",
+        "preview": "vite preview"
     },
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "unrs-resolver",
-      "vue-demi"
-    ]
-  }
+    "dependencies": {
+        "@nuxt/types": "^2.18.1",
+        "@nuxt/ui": "^4.3.0",
+        "@vueuse/core": "^14.1.0",
+        "gray-matter": "^4.0.3",
+        "marked": "^17.0.1",
+        "pinia": "^3.0.4",
+        "tailwindcss": "^4.1.18",
+        "vue": "^3.5.24",
+        "vue-router": "^4.6.4"
+    },
+    "devDependencies": {
+        "@luna-park/eslint-config": "^1.0.2",
+        "@types/node": "^24.10.1",
+        "@vitejs/plugin-vue": "^6.0.1",
+        "@vue/tsconfig": "^0.8.1",
+        "eslint": "^9.39.2",
+        "typescript": "~5.9.3",
+        "typescript-eslint": "^8.53.1",
+        "vite": "npm:rolldown-vite@7.2.5",
+        "vue-tsc": "^3.1.4"
+    },
+    "pnpm": {
+        "overrides": {
+            "vite": "npm:rolldown-vite@7.2.5"
+        },
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "unrs-resolver",
+            "vue-demi"
+        ]
+    }
 }

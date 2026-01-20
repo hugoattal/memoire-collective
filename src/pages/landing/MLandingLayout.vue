@@ -1,6 +1,6 @@
 <template>
     <UPageHero
-        description="Les personnalités politiques mentent en public sans conséquence, car nous oublions facilement. C'est terminé. Le mensonge a désormais un prix."
+        description="Les personnalités politiques peuvent mentir en public sans conséquence, car nous oublions facilement. C'est terminé. Le mensonge a désormais un prix."
         :links="links"
         title="Mémoire collective"
     />
@@ -16,14 +16,14 @@ import type { ButtonProps, PageFeatureProps } from "@nuxt/ui";
 
 const links: Array<ButtonProps> = [
     {
-        icon: "lucide:folder-search",
         label: "Navigateur",
+        icon: "lucide:folder-search",
         to: "/browser"
     },
     {
-        color: "neutral",
-        icon: "lucide:info",
         label: "À propos",
+        icon: "lucide:info",
+        color: "neutral",
         to: "/about",
         variant: "subtle"
     }
@@ -31,52 +31,51 @@ const links: Array<ButtonProps> = [
 
 const features: Array<PageFeatureProps> = [
     {
-        description: "Les promesses non tenues, les manipulations de données et la diffusion délibérée de fausses informations (fake news).",
+        title: "Mensonges et désinformation",
         icon: "lucide:tv",
-        title: "Mensonges et désinformation"
+        description: "Les promesses non tenues, les manipulations de données et la diffusion délibérée de fausses informations (fake news)."
     },
     {
-        description: "Les propos discriminatoires, racistes, sexistes, antisémites, islamophobes, homophobes, les attaques personnelles et les appels à la haine.",
+        title: "Dérapages et comportements inappropriés",
         icon: "lucide:shield-ban",
-        title: "Dérapages et comportements inappropriés"
+        description: "Les propos discriminatoires, racistes, sexistes, antisémites, islamophobes, homophobes, les attaques personnelles et les appels à la haine."
     },
     {
-        description: "La fraude fiscale, le détournement de fonds publics, le harcèlement, la corruption et l'obstruction à la justice.",
+        title: "Affaires judiciaires",
         icon: "lucide:gavel",
-        title: "Affaires judiciaires"
+        description: "La fraude fiscale, le détournement de fonds publics, le harcèlement, la corruption et l'obstruction à la justice."
     },
     {
-        description: "Erreurs graves dans la gestion de dossiers, refus d'assumer ses échecs, clientélisme et favoritisme.",
-        icon: "lucide:bomb",
-        title: "Incompétence et irresponsabilité"
+        title: "Incompétence et irresponsabilité",
+        icon: "lucide:biohazard",
+        description: "Erreurs graves dans la gestion de dossiers, refus d'assumer ses échecs, clientélisme et favoritisme."
     },
     {
-        description: "Enrichissement personnel, cumul des mandats, rémunérations excessives et lobbying.",
+        title: "Conflits d'intérêts",
         icon: "lucide:gift",
-        title: "Conflits d’intérêts"
+        description: "Enrichissement personnel, cumul des mandats, rémunérations excessives et lobbying."
     },
     {
-        description: "Incohérence idéologique, revirements opportunistes, populisme et double discours.",
+        title: "Opportunisme et double discours",
         icon: "lucide:mic-vocal",
-        title: "Opportunisme et double discours"
+        description: "Incohérence idéologique, revirements opportunistes, populisme et double discours."
     },
     {
-        description: "Contournement des règles, modification des lois pour servir ses intérêts et ingérence dans la justice.",
+        title: "Mépris des institutions",
         icon: "lucide:landmark",
-        title: "Mépris des institutions"
+        description: "Contournement des règles, modification des lois pour servir ses intérêts et ingérence dans la justice."
     },
     {
-        description: "Pression sur les journalistes, procédures-bâillons et usage excessif de la force.",
+        title: "Autoritarisme et censure",
         icon: "lucide:newspaper",
-        title: "Autoritarisme et censure"
+        description: "Pression sur les journalistes, procédures-bâillons et usage excessif de la force."
     },
     {
-        description: "Embauche de proches incompétents à des postes clés et réseaux d'influence.",
+        title: "Népotisme et copinage",
         icon: "lucide:handshake",
-        title: "Népotisme et copinage"
+        description: "Embauche de proches incompétents à des postes clés et réseaux d'influence."
     }
-]
-;
+];
 </script>
 
 <style scoped>

@@ -2,26 +2,45 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router"
 
 const routes: Array<RouteRecordRaw> = [
     {
+        name: "landing",
         component: () => import("@/pages/landing/MLandingLayout.vue"),
         meta: {
             title: "Mémoire collective"
         },
-        name: "landing",
         path: "/"
     },
     {
+        name: "legals",
+        component: () => import("@/pages/legals/MLegalsLayout.vue"),
+        meta: {
+            title: "Mentions légales"
+        },
+        path: "/legals"
+    },
+    {
+        name: "browser",
+        component: () => import("@/pages/browser/MBrowserLayout.vue"),
+        meta: {
+            title: "Navigateur"
+        },
+        path: "/browser"
+    },
+    {
+        name: "not-found",
         component: () => import("@/pages/not-found/MNotFoundLayout.vue"),
         meta: {
             title: "Page introuvable"
         },
-        name: "not-found",
         path: "/:path(.*)*"
     }
 ];
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior() {
+        return { top: 0 };
+    }
 });
 
 router.beforeEach(async (to, _from, next) => {

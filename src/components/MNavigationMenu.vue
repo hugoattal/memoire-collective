@@ -7,23 +7,23 @@ import type { ArrayOrNested, NavigationMenuItem } from "@nuxt/ui";
 
 const items: ArrayOrNested<NavigationMenuItem> = [
     {
-        icon: "lucide:folder-search",
         label: "Navigateur",
+        icon: "lucide:folder-search",
         to: "/browser"
     },
     {
-        icon: "lucide:book",
         label: "Documentation",
+        icon: "lucide:book",
         to: "/documentation"
     },
     {
-        icon: "lucide:info",
         label: "À propos",
+        icon: "lucide:info",
         to: "/about"
     },
     {
-        icon: "lucide:pencil-ruler",
         label: "Contribuer",
+        icon: "lucide:pencil-ruler",
         to: "/contribute"
     }
 ];
