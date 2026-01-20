@@ -7,16 +7,18 @@
                 variant="soft"
             >
                 <UUser
-                    :avatar="{ src: selectedPerson?.photo }"
+                    v-if="selectedPerson"
+                    :avatar="{ src: selectedPerson.photo }"
                     class="user"
-                    :description="dataStore.groups[selectedPerson?.group]?.name"
+                    :description="dataStore.groups[selectedPerson.group]?.name"
                     :name="selectedPerson?.name"
                 />
+                <UUser v-else />
             </UButton>
         </UDropdownMenu>
     </div>
 </template>
-
+g
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { computed, ref } from "vue";
@@ -34,16 +36,14 @@ const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.p
         avatar: {
             src: person.photo
         },
-        description: dataStore.groups[person.group].name,
+        description: dataStore.groups[person.group]?.name,
         onSelect: () => {
             selectedIndex.value = key;
         }
     }))
 );
 
-const selectedPerson = computed<TPerson>(() => dataStore.people[selectedIndex.value]);
-
-console.log(items.value);
+const selectedPerson = computed<TPerson | undefined>(() => dataStore.people[selectedIndex.value]);
 </script>
 
 <style scoped>

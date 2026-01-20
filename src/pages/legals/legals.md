@@ -1,8 +1,6 @@
 ## Éditeur du site
 
-Site personnel à but non lucratif, hébergé à titre individuel.
-
-Selon la Loi pour la Confiance dans l'Économie Numérique (LCEN) - [Article 6-III-2](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000002457442), les informations de l'éditeur sont omises.
+Site personnel à but non lucratif, hébergé à titre individuel, [Article 6-III-2](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000002457442).
 
 ## Hébergement
 
