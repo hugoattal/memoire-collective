@@ -1,6 +1,7 @@
 <template>
     <UPageHero
-        description="Les personnalités politiques peuvent mentir en public sans conséquence, car nous oublions facilement. C'est terminé. Le mensonge a désormais un prix."
+        description="L'impunité des manquements politiques repose sur notre tendance à oublier. Il est temps d'inverser cette logique et d'imposer un prix aux actes."
+        headline="En cours de développement"
         :links="links"
         title="Mémoire Collective"
     />
@@ -36,7 +37,7 @@ const features: Array<PageFeatureProps> = [
         description: "Les promesses non tenues, les manipulations de données et la diffusion délibérée de fausses informations (fake news)."
     },
     {
-        title: "Dérapages et comportements inappropriés",
+        title: "Comportements inappropriés",
         icon: "lucide:shield-ban",
         description: "Les propos discriminatoires, racistes, sexistes, antisémites, islamophobes, homophobes, les attaques personnelles et les appels à la haine."
     },

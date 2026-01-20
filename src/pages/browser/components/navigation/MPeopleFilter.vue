@@ -1,26 +1,49 @@
 <template>
     <div class="people-filter">
-        <UButton
-            v-for="(person, index) in dataStore.people"
-            :key="index"
-            class="button"
-            color="neutral"
-            variant="soft"
-        >
-            <UUser
-                :avatar="{ src: person.photo }"
-                class="user"
-                :description="dataStore.groups[person.group]?.name"
-                :name="person.name"
-            />
-        </UButton>
+        <UDropdownMenu :items="items">
+            <UButton
+                class="button"
+                color="neutral"
+                variant="soft"
+            >
+                <UUser
+                    :avatar="{ src: selectedPerson?.photo }"
+                    class="user"
+                    :description="dataStore.groups[selectedPerson?.group]?.name"
+                    :name="selectedPerson?.name"
+                />
+            </UButton>
+        </UDropdownMenu>
     </div>
 </template>
 
 <script setup lang="ts">
+import type { DropdownMenuItem } from "@nuxt/ui";
+import { computed, ref } from "vue";
+
 import { useDataStore } from "@/data/store.ts";
+import type { TPerson } from "@/types/people.ts";
+
+const selectedIndex = ref("jbardella");
 
 const dataStore = useDataStore();
+
+const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.people)
+    .map(([key, person]) => ({
+        label: person.name,
+        avatar: {
+            src: person.photo
+        },
+        description: dataStore.groups[person.group].name,
+        onSelect: () => {
+            selectedIndex.value = key;
+        }
+    }))
+);
+
+const selectedPerson = computed<TPerson>(() => dataStore.people[selectedIndex.value]);
+
+console.log(items.value);
 </script>
 
 <style scoped>
@@ -30,7 +53,7 @@ const dataStore = useDataStore();
     gap: var(--length-s);
 
     &:deep(.button) {
-        width: 192px;
+        width: 256px;
         overflow: hidden;
 
         &:deep(.user) {

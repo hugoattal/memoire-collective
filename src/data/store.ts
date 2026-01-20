@@ -9,7 +9,7 @@ export const useDataStore = defineStore(
     "data",
     () => {
         const people = ref<Record<string, TPerson>>(fetchPeople());
-        const groups = ref<Record<string, TPerson>>(fetchGroups());
+        const groups = ref<Record<string, TGroup>>(fetchGroups());
 
         return {
             groups,

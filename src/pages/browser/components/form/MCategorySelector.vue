@@ -15,10 +15,10 @@
         >
             <UButton
                 class="category"
-                :icon="icon"
+                :icon="category.icon"
                 :variant="buttonVariant"
             >
-                <span class="title">{{ name }}</span>
+                <span class="title">{{ category.name }}</span>
             </UButton>
             <template #item="{item}">
                 <UCheckbox
@@ -35,11 +35,11 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { computed, onMounted, reactive, ref } from "vue";
 
+import type { TCategory } from "@/data/categories.ts";
+
 const props = defineProps<{
     id: string;
-    name: string;
-    icon: string;
-    children: Record<string, string>;
+    category: TCategory;
 }>();
 
 const value = defineModel<Set<string>>({ default: () => reactive(new Set()) });
@@ -51,7 +51,7 @@ onMounted(() => {
     }
 
     if (value.value.has(props.id)) {
-        for (const child of Object.keys(props.children)) {
+        for (const child of Object.keys(props.category.children)) {
             childValue.value.add(child);
         }
         return;
@@ -79,11 +79,11 @@ const checkboxVariant = computed(() => allState.value === false ? "soft" : "subt
 
 const items = computed<Array<DropdownMenuItem>>(() => {
     return [
-        { label: props.name, disabled: true, type: "label" },
+        { label: props.category.name, disabled: true, type: "label" },
         { type: "separator" },
-        ...Object.entries(props.children)
-            .map(([id, name]): DropdownMenuItem => ({
-                label: name,
+        ...Object.entries(props.category.children)
+            .map(([id, child]): DropdownMenuItem => ({
+                label: child.name,
                 checked: childValue.value.has(`${ props.id }/${ id }`),
                 onSelect(event) {
                     event.preventDefault();
@@ -106,7 +106,7 @@ function toggleAll() {
     if ([false, "indeterminate"].includes(allState.value)) {
         value.value.clear();
         value.value.add(props.id);
-        for (const child of Object.keys(props.children)) {
+        for (const child of Object.keys(props.category.children)) {
             childValue.value.add(`${ props.id }/${ child }`);
         }
     }
@@ -120,7 +120,7 @@ function updateChildren() {
     if (childValue.value.size === 0) {
         value.value.clear();
     }
-    else if (childValue.value.size === Object.keys(props.children).length) {
+    else if (childValue.value.size === Object.keys(props.category.children).length) {
         value.value.clear();
         value.value.add(props.id);
     }
@@ -140,7 +140,7 @@ function updateChildren() {
     }
 
     &:deep(.category) {
-        width: 180px;
+        width: 128px;
         white-space: nowrap;
 
         .title {

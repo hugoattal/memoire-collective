@@ -1,13 +1,11 @@
 <template>
     <div class="categories">
-        <MSelector
+        <MCategorySelector
             v-for="(category, index) in categories"
             :id="index"
             :key="index"
             v-model="filters[index]"
-            :children="category.children"
-            :icon="category.icon"
-            :name="category.name"
+            :category="category"
         />
     </div>
 </template>
@@ -16,7 +14,7 @@
 import { computed, reactive, watch } from "vue";
 
 import { categories } from "@/data/categories.ts";
-import MSelector from "@/pages/browser/components/form/MSelector.vue";
+import MCategorySelector from "@/pages/browser/components/form/MCategorySelector.vue";
 import { useBrowserStore } from "@/pages/browser/store.ts";
 
 const browserStore = useBrowserStore();
