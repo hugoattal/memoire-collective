@@ -3,6 +3,7 @@ import { ref } from "vue";
 
 import { fetchGroups } from "@/data/groups.ts";
 import { fetchPeople } from "@/data/people.ts";
+import type { TGroup } from "@/types/groups.ts";
 import type { TPerson } from "@/types/people.ts";
 
 export const useDataStore = defineStore(
