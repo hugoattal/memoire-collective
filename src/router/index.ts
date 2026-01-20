@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "landing",
         component: () => import("@/pages/landing/MLandingLayout.vue"),
         meta: {
-            title: "Mémoire collective"
+            title: "Mémoire Collective"
         },
         path: "/"
     },
@@ -44,7 +44,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, _from, next) => {
-    document.title = to.meta.title as string || "Mémoire collective";
+    document.title = to.meta.title as string || "Mémoire Collective";
 
     next();
 });

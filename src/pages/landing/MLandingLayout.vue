@@ -2,7 +2,7 @@
     <UPageHero
         description="Les personnalités politiques peuvent mentir en public sans conséquence, car nous oublions facilement. C'est terminé. Le mensonge a désormais un prix."
         :links="links"
-        title="Mémoire collective"
+        title="Mémoire Collective"
     />
     <UPageSection
         description=""
