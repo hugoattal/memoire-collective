@@ -24,3 +24,9 @@ export type TEvent = {
     // Le timestamp de la journée pour placer cet événement par rapport à d'autres dans la même journée
     timestamp?: number;
 };
+
+export type TFilledEvent = TEvent & {
+    body: string;
+    date: Date;
+    key: string;
+};

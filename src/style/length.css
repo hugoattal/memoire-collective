@@ -10,4 +10,7 @@
     --length-xxl: 48px;
     --length-xxxl: 64px;
     --length-xxxxl: 96px;
+
+    --radius-s: calc(var(--ui-radius) * 1);
+    --radius-m: calc(var(--ui-radius) * 1.5);
 }

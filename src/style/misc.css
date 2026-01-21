@@ -1,0 +1,3 @@
+:root {
+    --transition-default: var(--default-transition-duration) var(--default-transition-timing-function);
+}

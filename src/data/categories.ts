@@ -7,7 +7,7 @@ export type TCategory = {
     }>;
 };
 
-export const categories = {
+export const categories: Record<string, TCategory> = {
     autoritarisme: {
         name: "Autoritarisme et censure",
         icon: "lucide:newspaper",
@@ -198,4 +198,4 @@ export const categories = {
             }
         }
     }
-} satisfies Record<string, TCategory>;
+};

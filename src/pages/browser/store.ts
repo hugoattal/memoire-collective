@@ -16,7 +16,7 @@ export const useBrowserStore = defineStore(
         }
 
         watch(() => filters.value, async () => {
-            await router.push({ query: { filter: filters.value.join(",") } });
+            await router.push({ query: { ...router.currentRoute.value.query, filter: filters.value.join(",") } });
         });
 
         return {

@@ -1,9 +1,9 @@
 import fm from "front-matter";
 
 import { markdown } from "@/lib/markdown.ts";
-import type { TEvent } from "@/types/event.ts";
+import type { TEvent, TFilledEvent } from "@/types/event.ts";
 
-export type TEvents = Record<string, Record<string, Record<string, TEvent>>>;
+export type TEvents = Record<string, Record<string, Record<string, TFilledEvent>>>;
 
 export function fetchEvents() {
     const eventsImport: Record<string, string> = import.meta.glob("./**/**/events/**/*.md", { eager: true, import: "default", query: "?raw" });
@@ -14,15 +14,16 @@ export function fetchEvents() {
         const splitKey = eventKey.split("/");
         const type = splitKey[1]!;
         const owner = splitKey[2]!;
-        const slug = splitKey[5]!.split(".")[0]!;
-        const date = new Date(slug.split("_")[0]!);
+        const key = splitKey[5]!.split(".")[0]!;
+        const date = new Date(key.split("_")[0]!);
 
         const frontmatter = fm(eventImport);
 
-        set(events, [type, owner, slug], {
+        set(events, [type, owner, key], {
             ...(fm(eventImport).attributes as TEvent),
             body: markdown.parse(frontmatter.body),
-            date
+            date,
+            key
         });
     }
 
