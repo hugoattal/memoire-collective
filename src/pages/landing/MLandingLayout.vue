@@ -17,8 +17,8 @@ import type { ButtonProps, PageFeatureProps } from "@nuxt/ui";
 
 const links: Array<ButtonProps> = [
     {
-        label: "Navigateur",
-        icon: "lucide:folder-search",
+        label: "Chronologie",
+        icon: "lucide:calendars",
         to: "/browser"
     },
     {

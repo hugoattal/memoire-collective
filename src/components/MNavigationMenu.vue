@@ -7,8 +7,8 @@ import type { ArrayOrNested, NavigationMenuItem } from "@nuxt/ui";
 
 const items: ArrayOrNested<NavigationMenuItem> = [
     {
-        label: "Navigateur",
-        icon: "lucide:folder-search",
+        label: "Chronologie",
+        icon: "lucide:calendars",
         to: "/browser"
     },
     {

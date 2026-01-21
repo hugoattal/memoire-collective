@@ -1,34 +1,36 @@
 <template>
-    <UFieldGroup class="selector">
-        <UButton
-            :variant="checkboxVariant"
-            @click="toggleAll"
-        >
-            <UCheckbox
-                v-model="allState"
-                class="toggle-all"
-            />
-        </UButton>
-        <UDropdownMenu
-            v-model="childValue"
-            :items="items"
-        >
+    <UTooltip :text="category.name">
+        <UFieldGroup class="selector">
             <UButton
-                class="category"
-                :icon="category.icon"
-                :variant="buttonVariant"
+                :variant="checkboxVariant"
+                @click="toggleAll"
             >
-                <span class="title">{{ category.name }}</span>
-            </UButton>
-            <template #item="{item}">
                 <UCheckbox
-                    v-if="item.type === 'checkbox'"
-                    v-model="item.checked"
+                    v-model="allState"
+                    class="toggle-all"
                 />
-                {{ item.label }}
-            </template>
-        </UDropdownMenu>
-    </UFieldGroup>
+            </UButton>
+            <UDropdownMenu
+                v-model="childValue"
+                :items="items"
+            >
+                <UButton
+                    class="category"
+                    :icon="category.icon"
+                    :variant="buttonVariant"
+                >
+                    <span class="title">{{ category.name }}</span>
+                </UButton>
+                <template #item="{item}">
+                    <UCheckbox
+                        v-if="item.type === 'checkbox'"
+                        v-model="item.checked"
+                    />
+                    {{ item.label }}
+                </template>
+            </UDropdownMenu>
+        </UFieldGroup>
+    </UTooltip>
 </template>
 
 <script setup lang="ts">

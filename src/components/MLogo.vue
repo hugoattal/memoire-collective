@@ -6,6 +6,10 @@
         />
         <div class="text">
             Mémoire Collective
+
+            <div class="version">
+                alpha
+            </div>
         </div>
     </div>
 </template>
@@ -29,6 +33,15 @@
         font-size: var(--font-size-xl);
         font-weight: bold;
         display: flex;
+        position: relative;
+
+        .version {
+            color: var(--color-primary);
+            font-size: var(--font-size-xs);
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+        }
     }
 }
 </style>
