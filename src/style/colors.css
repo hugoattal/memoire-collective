@@ -1,0 +1,5 @@
+:root {
+    --color-primary-softest: color-mix(in oklab, var(--color-primary) 10%, transparent);
+    --color-primary-softer: color-mix(in oklab, var(--color-primary) 20%, transparent);
+    --color-primary-soft: color-mix(in oklab, var(--color-primary) 30%, transparent);
+}

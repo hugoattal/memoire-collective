@@ -3,22 +3,35 @@
         class="card"
         @click="selectCard"
     >
-        <UIcon
-            class="icon"
-            :name="icon"
-        />
-        <div
-            class="title"
-            v-html="titleHtml"
-        />
-        <div class="date">
-            {{ event.date.toLocaleDateString("fr-FR") }}
-        </div>
-        <div class="avatar">
-            <UAvatar
-                size="xs"
-                :src="person.photo"
-            />
+        <div class="body">
+            <div class="icon-wrapper">
+                <UIcon
+                    class="icon"
+                    :name="icon"
+                />
+            </div>
+            <div class="content">
+                <div class="header">
+                    <UAvatar
+                        class="avatar"
+                        :src="person.photo"
+                    />
+                    <div class="name">
+                        {{ person.name }}
+                    </div>
+                    <div class="date">
+                        {{ event.date.toLocaleDateString("fr-FR") }}
+                    </div>
+                </div>
+                <div
+                    class="title"
+                    v-html="titleHtml"
+                />
+                <div
+                    class="content"
+                    v-html="event.body"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -56,53 +69,99 @@ function selectCard() {
 
 <style scoped>
 .card {
-    height: 96px;
-    width: 380px;
-    background: var(--ui-bg-elevated);
+    width: 420px;
+    background: var(--ui-bg);
     border-radius: var(--radius-m);
     position: relative;
-    padding: var(--length-s);
+    border: 1px solid var(--ui-border);
     display: flex;
-    gap: var(--length-s);
-    align-items: center;
+    flex-direction: column;
     cursor: pointer;
-    transition: background var(--transition-default);
+    transition: border var(--transition-default);
+    overflow: hidden;
 
     &:hover {
-        background: var(--ui-bg-accented);
+        border: 1px solid var(--ui-border-accented);
     }
 
-    .icon {
-        color: var(--color-primary);
-        font-size: var(--font-icon-l);
-        width: 48px;
-    }
+    .body {
+        display: flex;
+        padding: var(--length-m);
+        gap: var(--length-s);
 
-    .title {
-        flex: 1 1 0;
-        height: 100%;
+        .icon-wrapper {
+            grid-area: icon;
+            background: var(--color-primary-softest);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--color-primary-softer);
 
-        &:deep(a) {
-            color: var(--color-primary);
-            font-weight: bold;
+            .icon {
+                color: var(--color-primary);
+                font-size: var(--font-icon-l);
+                width: 48px;
+            }
         }
-    }
 
-    .date {
-        color: var(--ui-text-dimmed);
-    }
+        .content {
+            grid-area: content;
+            display: flex;
+            flex-direction: column;
+            gap: var(--length-xxs);
+            overflow: hidden;
 
-    .avatar {
-        position: absolute;
-        bottom: var(--length-s);
-        right: var(--length-s);
-    }
+            .header {
+                display: flex;
+                align-items: center;
+                gap: var(--length-xxs);
 
-    .date {
-        position: absolute;
-        bottom: var(--length-s);
-        left: calc(48px + var(--length-l));
-        font-size: var(--font-size-xs);
+                .avatar {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .name {
+                    flex: 1 1 auto;
+                    font-weight: 600;
+                    color: var(--color-primary);
+                    font-size: var(--font-size-s);
+                }
+
+                .date {
+                    color: var(--ui-text-dimmed);
+                    font-size: var(--font-size-xs);
+                }
+            }
+
+            .title {
+                font-size: var(--font-size-m);
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-weight: 600;
+
+                &:deep(a) {
+                    color: var(--color-primary);
+                    font-weight: bold;
+                    background: var(--color-primary-softest);
+                    padding: 0 var(--length-xxs);
+                    border-radius: var(--radius-m);
+                }
+            }
+
+            .content {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                font-size: var(--font-size-s);
+                color: var(--ui-text-muted);
+            }
+        }
     }
 }
 </style>
