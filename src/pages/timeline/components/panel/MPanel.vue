@@ -31,12 +31,14 @@ const timelineStore = useTimelineStore();
 const dataStore = useDataStore();
 
 const event = computed(() => dataStore.events["people"][timelineStore.selectedPerson]?.[timelineStore.selectedEvent]);
-const openedPanel = ref(true);
+const openedPanel = ref(false);
 
 watch(event, () => {
     if (event.value) {
         openedPanel.value = true;
     }
+}, {
+    immediate: true
 });
 whenever(() => !openedPanel.value, async () => await timelineStore.deselectEvent());
 </script>
