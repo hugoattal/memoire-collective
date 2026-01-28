@@ -3,7 +3,7 @@ title: Confirmation du jugement par la Cour de cassation
 categories: justice/condamnation
 files: "rassemblement-national/jeanne"
 sources:
-  - name: "La Cour de cassation confirme la condamnation du Rassemblement national dans l’affaire des kits de campagne"
+  - name: "La Cour de cassation confirme la condamnation du Rassemblement national dans l'affaire des kits de campagne"
     url: "https://www.lemonde.fr/societe/article/2024/06/19/la-cour-de-cassation-confirme-la-condamnation-du-rassemblement-national-dans-l-affaire-des-kits-de-campagne_6241414_3224.html"
     date: "2024/06/19"
   - name: "Affaire des kits de campagne: La Cour de cassation confirme la condamnation du RN pour recel d'abus de biens sociaux"
@@ -11,4 +11,4 @@ sources:
     date: "2024/06/19"
 ---
 
-La Cour de cassation confirme le jugement prononcé en appel, rendant définitives les condamnations du @rassemblement-national (ex-FN) et de ses proches pour "recel d’abus de biens sociaux" et "détournement de fonds publics".
+La Cour de cassation confirme le jugement prononcé en appel, rendant définitives les condamnations du @rassemblement-national (ex-FN) et de ses proches pour **"recel d'abus de biens sociaux"** et **"détournement de fonds publics"**.

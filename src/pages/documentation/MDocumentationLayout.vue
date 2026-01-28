@@ -1,12 +1,12 @@
 <template>
     <MPageContent
         :markdown="markdown"
-        title="Mentions légales"
+        title="Documentation"
     />
 </template>
 
 <script setup lang="ts">
-import markdown from "@/pages/legals/legals.md?raw";
+import markdown from "@/pages/documentation/documentation.md?raw";
 </script>
 
 <style scoped>

@@ -9,4 +9,4 @@ sources:
 
 ---
 
-@mlepen est condamnée par le tribunal correctionnel de Paris à quatre ans de prison (dont deux avec sursis), 100 000 € d’amende et cinq ans d’inéligibilité (exécutée immédiatement) pour avoir organisé entre 2009 et 2016, un système de contrats fictifs d’assistants parlementaires européens, détournant plus de 4,4 millions d’euros au profit de son parti.
+@mlepen est condamnée par le tribunal correctionnel de Paris à **quatre ans de prison** (dont deux avec sursis), **100 000 euros d'amende** et **cinq ans d'inéligibilité** (exécutée immédiatement) pour avoir organisé entre 2009 et 2016, un système de contrats fictifs d'assistants parlementaires européens, détournant plus de **4,4 millions d'euros** au profit de son parti.

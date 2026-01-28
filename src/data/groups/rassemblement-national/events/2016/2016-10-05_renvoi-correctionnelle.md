@@ -3,7 +3,7 @@ title: "Renvoi devant le tribunal correctionnel"
 categories: "justice/obstruction"
 files: "rassemblement-national/jeanne"
 sources:
-  - name: "Le Front national va devoir affronter l’épreuve d’un procès"
+  - name: "Le Front national va devoir affronter l'épreuve d'un procès"
     url: "https://www.lemonde.fr/politique/article/2016/10/07/le-front-national-va-devoir-affronter-l-epreuve-d-un-proces_5009620_823448.html"
     date: "2016/10/07"
   - name: "Financement de campagnes: le parquet veut un procès pour le FN"

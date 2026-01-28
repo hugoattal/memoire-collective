@@ -8,4 +8,4 @@ sources:
 
 ---
 
-Une trentaine de médias, dont l’AFP et Le Monde, dénoncent le tri sélectif des journalistes par le Front national pour couvrir @mlepen, qualifiant cette pratique d’atteinte à la liberté de la presse et au droit d’informer.
+Une trentaine de médias, dont l'AFP et Le Monde, dénoncent le tri sélectif des journalistes par le Front national pour couvrir @mlepen, qualifiant cette pratique d'atteinte à la liberté de la presse et au droit d'informer.

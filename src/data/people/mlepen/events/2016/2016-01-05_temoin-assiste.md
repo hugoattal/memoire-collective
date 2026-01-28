@@ -8,5 +8,5 @@ sources:
     date: "2016/01/05"
 ---
 
-Dans le cadre de l'enquête sur le financement des campagnes du FN, @mlepen est entendue par les juges sous le statut de témoin assisté, après avoir refusé de se présenter à deux reprises sour les status de témoin simple et mis en examen.
+Dans le cadre de l'enquête sur le financement des campagnes du FN, @mlepen est entendue par les juges sous le statut de témoin assisté, après avoir **refusé de se présenter à deux reprises** sour les status de témoin simple et mis en examen.
 

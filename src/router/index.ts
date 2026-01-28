@@ -26,6 +26,30 @@ const routes: Array<RouteRecordRaw> = [
         path: "/timeline/:person?/:event?"
     },
     {
+        name: "documentation",
+        component: () => import("@/pages/documentation/MDocumentationLayout.vue"),
+        meta: {
+            title: "Documentation"
+        },
+        path: "/documentation"
+    },
+    {
+        name: "about",
+        component: () => import("@/pages/about/MAboutLayout.vue"),
+        meta: {
+            title: "À propos"
+        },
+        path: "/about"
+    },
+    {
+        name: "contribute",
+        component: () => import("@/pages/contribute/MContributeLayout.vue"),
+        meta: {
+            title: "Contribuer"
+        },
+        path: "/contribute"
+    },
+    {
         name: "not-found",
         component: () => import("@/pages/not-found/MNotFoundLayout.vue"),
         meta: {

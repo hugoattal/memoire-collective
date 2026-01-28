@@ -9,4 +9,4 @@ sources:
 
 ---
 
-@mlepen a été déclarée démissionnaire d’office de son mandat de conseillère départementale après une condamnation à cinq ans d’inéligibilité avec effet immédiat. Le Conseil d’État a rejeté son recours, confirmant que les règles appliquées aux conseillers départementaux (comme aux municipaux) sont constitutionnelles et distinctes de celles des parlementaires. Sa QPC a été écartée, clôturant définitivement le dossier.
+@mlepen a été déclarée démissionnaire d'office de son mandat de conseillère départementale après une condamnation à cinq ans d'inéligibilité avec effet immédiat. Le Conseil d'État a rejeté son recours, confirmant que les règles appliquées aux conseillers départementaux (comme aux municipaux) sont constitutionnelles et distinctes de celles des parlementaires. Sa QPC a été écartée, clôturant définitivement le dossier.

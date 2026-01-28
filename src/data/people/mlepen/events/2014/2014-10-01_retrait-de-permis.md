@@ -8,4 +8,4 @@ sources:
 
 ---
 
-@mlepen a vu son permis de conduire annulé après avoir perdu tous ses points entre le 21 avril 2007 et le 14 mars 2012, pour sept infractions constituées par des excès de vitesse, ainsi que franchissement d'un feu rouge
+@mlepen a vu son permis de conduire annulé après avoir perdu tous ses points entre le 21 avril 2007 et le 14 mars 2012, pour **sept infractions** constituées par des **excès de vitesse**, ainsi que **franchissement d'un feu rouge**.
