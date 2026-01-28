@@ -1,11 +1,6 @@
-<template>
-    <UNavigationMenu :items="items" />
-</template>
-
-<script setup lang="ts">
 import type { ArrayOrNested, NavigationMenuItem } from "@nuxt/ui";
 
-const items: ArrayOrNested<NavigationMenuItem> = [
+export const navigationItems: ArrayOrNested<NavigationMenuItem> = [
     {
         label: "Chronologie",
         icon: "lucide:calendars",
@@ -27,8 +22,3 @@ const items: ArrayOrNested<NavigationMenuItem> = [
         to: "/contribute"
     }
 ];
-</script>
-
-<style scoped>
-
-</style>

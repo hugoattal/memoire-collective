@@ -1,7 +1,7 @@
 <template>
     <div
         class="timeline"
-        @click="deselectEvent"
+        @click="timelineStore.deselectEvent"
     >
         <div class="events">
             <template
@@ -28,7 +28,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useRouter } from "vue-router";
 
 import MTimelineCard from "@/pages/timeline/components/timeline/MTimelineCard.vue";
 import { useTimelineStore } from "@/pages/timeline/store.ts";
@@ -40,12 +39,7 @@ const props = defineProps<{
     person: TPerson;
 }>();
 
-const router = useRouter();
 const timelineStore = useTimelineStore();
-
-async function deselectEvent() {
-    await router.push({ name: "timeline", params: { person: timelineStore.selectedPerson } });
-}
 
 const spacedEvents = computed<Array<TFilledEvent | number>>(() => {
     const result = [];

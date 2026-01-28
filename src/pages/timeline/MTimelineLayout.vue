@@ -7,9 +7,7 @@
             :events="eventsArray"
             :person="person"
         />
-        <MPanel
-            class="panel"
-        />
+        <MPanel class="panel" />
     </div>
 </template>
 

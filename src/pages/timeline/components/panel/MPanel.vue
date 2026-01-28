@@ -1,37 +1,29 @@
 <template>
     <div
+        v-if="isDesktop"
         class="panel"
         :class="{open: event}"
         @click="handleLinkClick"
     >
-        <div
-            v-if="event"
-            class="content"
-        >
-            <h1 v-html="parseTag(event.title)" />
-            <h2>Description</h2>
-            <div
-                class="content"
-                v-html="parseTag(event.body)"
-            />
-            <h2>Sources</h2>
-            <div class="sources">
-                <MSource
-                    v-for="(source, index) of event.sources"
-                    :key="index"
-                    :source="source"
-                />
-            </div>
-        </div>
+        <MPanelContent :event="event" />
     </div>
+    <USlideover
+        v-else
+        v-model:open="openedPanel"
+    >
+        <template #body>
+            <MPanelContent :event="event" />
+        </template>
+    </USlideover>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { whenever } from "@vueuse/core";
+import { computed, ref, watch } from "vue";
 
 import { useDataStore } from "@/data/store.ts";
-import MSource from "@/pages/timeline/components/panel/MSource.vue";
-import { parseTag } from "@/pages/timeline/lib/markdown.ts";
+import { isDesktop } from "@/lib/utils.ts";
+import MPanelContent from "@/pages/timeline/components/panel/MPanelContent.vue";
 import { useTimelineStore } from "@/pages/timeline/store.ts";
 import { handleLinkClick } from "@/router/handle.ts";
 
@@ -39,6 +31,14 @@ const timelineStore = useTimelineStore();
 const dataStore = useDataStore();
 
 const event = computed(() => dataStore.events["people"][timelineStore.selectedPerson]?.[timelineStore.selectedEvent]);
+const openedPanel = ref(true);
+
+watch(event, () => {
+    if (event.value) {
+        openedPanel.value = true;
+    }
+});
+whenever(() => !openedPanel.value, async () => await timelineStore.deselectEvent());
 </script>
 
 <style scoped>
@@ -51,28 +51,6 @@ const event = computed(() => dataStore.events["people"][timelineStore.selectedPe
     &.open {
         border-left: 1px solid var(--ui-border);
         flex-basis: 50%;
-    }
-
-    .content {
-        h1 {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: var(--font-size-s);
-            margin-top: var(--length-m);
-            margin-bottom: var(--length-s);
-            color: var(--color-primary);
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-    }
-
-    .sources {
-        display: flex;
-        flex-direction: column;
-        gap: var(--length-s);
     }
 }
 </style>

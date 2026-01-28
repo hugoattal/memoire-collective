@@ -1,11 +1,11 @@
 <template>
-    <UHeader>
+    <UHeader :items="navigationItems">
         <template #left>
             <RouterLink to="/">
                 <MLogo />
             </RouterLink>
         </template>
-        <MNavigationMenu />
+        <UNavigationMenu :items="navigationItems" />
         <template #right>
             <UColorModeButton />
             <UButton
@@ -16,11 +16,17 @@
                 variant="ghost"
             />
         </template>
+        <template #body>
+            <UNavigationMenu
+                :items="navigationItems"
+                orientation="vertical"
+            />
+        </template>
     </UHeader>
 </template>
 
 <script setup lang="ts">
-
+import { navigationItems } from "@/components/navigation.ts";
 </script>
 
 <style scoped>

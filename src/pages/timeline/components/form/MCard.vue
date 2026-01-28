@@ -62,7 +62,7 @@ const props = defineProps<{
 
 <style scoped>
 .card {
-    width: 420px;
+    max-width: 420px;
     background: var(--ui-bg);
     border-radius: var(--radius-m);
     position: relative;

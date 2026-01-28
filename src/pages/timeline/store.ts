@@ -43,6 +43,10 @@ export const useTimelineStore = defineStore(
             await router.push({ name: "timeline", params: { event: eventId, person: selectedPerson.value } });
         }
 
+        async function deselectEvent() {
+            await router.push({ name: "timeline", params: { person: selectedPerson.value } });
+        }
+
         function isEventInFilter(event: TFilledEvent) {
             if (filters.value.length === 0) {
                 return true;
@@ -52,6 +56,7 @@ export const useTimelineStore = defineStore(
         }
 
         return {
+            deselectEvent,
             filters,
             isEventInFilter,
             selectedEvent,
