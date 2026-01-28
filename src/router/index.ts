@@ -18,12 +18,12 @@ const routes: Array<RouteRecordRaw> = [
         path: "/legals"
     },
     {
-        name: "browser",
-        component: () => import("@/pages/browser/MBrowserLayout.vue"),
+        name: "timeline",
+        component: () => import("@/pages/timeline/MTimelineLayout.vue"),
         meta: {
-            title: "Navigateur"
+            title: "Chronologie"
         },
-        path: "/browser"
+        path: "/timeline/:person?/:event?"
     },
     {
         name: "not-found",

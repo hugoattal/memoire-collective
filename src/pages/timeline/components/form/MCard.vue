@@ -1,70 +1,63 @@
 <template>
-    <div
-        class="card"
-        @click="selectCard"
-    >
+    <div class="card">
         <div class="body">
-            <div class="icon-wrapper">
+            <div
+                v-if="icon"
+                class="icon-wrapper"
+            >
                 <UIcon
                     class="icon"
                     :name="icon"
                 />
             </div>
-            <div class="content">
+            <div
+                class="content"
+                @click="handleLinkClick"
+            >
                 <div class="header">
                     <UAvatar
+                        v-if="avatar"
                         class="avatar"
-                        :src="person.photo"
+                        :src="avatar"
                     />
                     <div class="name">
-                        {{ person.name }}
+                        {{ name }}
                     </div>
                     <div class="date">
-                        {{ event.date.toLocaleDateString("fr-FR") }}
+                        {{ date.toLocaleDateString("fr-FR") }}
                     </div>
                 </div>
                 <div
                     class="title"
-                    v-html="titleHtml"
+                    v-html="parseTag(title)"
                 />
                 <div
                     class="content"
-                    v-html="event.body"
+                    v-html="parseTag(body)"
                 />
+                <div
+                    v-if="$slots.tags"
+                    class="tags"
+                >
+                    <slot name="tags" />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRouter } from "vue-router";
-
-import { categories } from "@/data/categories.ts";
-import { useDataStore } from "@/data/store.ts";
-import type { TFilledEvent } from "@/types/event.ts";
-import type { TPerson } from "@/types/people.ts";
-
-const dataStore = useDataStore();
-const router = useRouter();
+import { parseTag } from "@/pages/timeline/lib/markdown.ts";
+import { handleLinkClick } from "@/router/handle.ts";
 
 const props = defineProps<{
-    event: TFilledEvent;
-    person: TPerson;
+    name: string;
+    title: string;
+    icon?: string;
+    avatar?: string;
+    body: string;
+    date: Date;
 }>();
-
-const icon = computed(() => {
-    const category = (props.event.category ?? props.event.categories?.[0] ?? "").split("/")[0]!;
-    return categories[category]?.icon;
-});
-
-const titleHtml = computed(() => {
-    return props.event.title.replace(/@(\w+)/g, (_, tag) => `<a href="#${ tag }" class="tag">${ dataStore.people[tag]?.name }</a>`);
-});
-
-function selectCard() {
-    router.push({ query: { ...router.currentRoute.value.query, event: props.event.key } });
-}
 </script>
 
 <style scoped>
@@ -77,12 +70,7 @@ function selectCard() {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: border var(--transition-default);
     overflow: hidden;
-
-    &:hover {
-        border: 1px solid var(--ui-border-accented);
-    }
 
     .body {
         display: flex;
@@ -143,14 +131,6 @@ function selectCard() {
                 text-overflow: ellipsis;
                 overflow: hidden;
                 font-weight: 600;
-
-                &:deep(a) {
-                    color: var(--color-primary);
-                    font-weight: bold;
-                    background: var(--color-primary-softest);
-                    padding: 0 var(--length-xxs);
-                    border-radius: var(--radius-m);
-                }
             }
 
             .content {
@@ -161,6 +141,12 @@ function selectCard() {
                 font-size: var(--font-size-s);
                 color: var(--ui-text-muted);
             }
+        }
+
+        .tags {
+            display: flex;
+            gap: var(--length-xxs);
+            flex-wrap: wrap;
         }
     }
 }

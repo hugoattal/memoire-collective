@@ -2,4 +2,11 @@
     --color-primary-softest: color-mix(in oklab, var(--color-primary) 10%, transparent);
     --color-primary-softer: color-mix(in oklab, var(--color-primary) 20%, transparent);
     --color-primary-soft: color-mix(in oklab, var(--color-primary) 30%, transparent);
+
+    --color-text-softest: var(--ui-text-dimmed);
+    --color-text-softer: var(--ui-text-muted);
+    --color-text-soft: var(--ui-text-toned);
+    --color-text: var(--ui-text);
+
+    --color-text-inverted: var(--ui-text-inverted);
 }

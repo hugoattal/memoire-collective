@@ -1,11 +1,11 @@
 ---
 title: Condamnation pour détournement de fonds publics
-category: justice/detournement
-affaire: assistants-parlementaires-fn-parlement-europeen
+categories: justice/detournement
+files: assistants-parlementaires-fn-parlement-europeen
 sources:
   - name: "Délibéré dossier"
     url: "https://infographics.mediapart.fr/hubs/assets/documents/proces-le-pen/attendus-jugement-rn-31-mars.pdf"
-    date: "31/03/2025"
+    date: "2025/03/31"
 
 ---
 

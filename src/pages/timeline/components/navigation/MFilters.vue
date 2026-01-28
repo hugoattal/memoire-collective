@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import MCategoriesFilter from "@/pages/browser/components/navigation/MCategoriesFilter.vue";
-import MPeopleFilter from "@/pages/browser/components/navigation/MPeopleFilter.vue";
+import MCategoriesFilter from "@/pages/timeline/components/navigation/MCategoriesFilter.vue";
+import MPeopleFilter from "@/pages/timeline/components/navigation/MPeopleFilter.vue";
 </script>
 
 <style scoped>

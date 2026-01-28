@@ -14,16 +14,16 @@
 import { computed, reactive, watch } from "vue";
 
 import { categories } from "@/data/categories.ts";
-import MCategorySelector from "@/pages/browser/components/form/MCategorySelector.vue";
-import { useBrowserStore } from "@/pages/browser/store.ts";
+import MCategorySelector from "@/pages/timeline/components/form/MCategorySelector.vue";
+import { useTimelineStore } from "@/pages/timeline/store.ts";
 
-const browserStore = useBrowserStore();
+const timelineStore = useTimelineStore();
 const filters = reactive<Record<string, Set<string>>>({});
 
 for (const categoryKey of Object.keys(categories)) {
     filters[categoryKey] = new Set();
 
-    const existingFilters = browserStore.filters.filter((filter) => filter.startsWith(categoryKey));
+    const existingFilters = timelineStore.filters.filter((filter) => filter.startsWith(categoryKey));
 
     for (const existingFilter of existingFilters) {
         filters[categoryKey].add(existingFilter);
@@ -33,7 +33,7 @@ for (const categoryKey of Object.keys(categories)) {
 const allFilters = computed(() => Object.values(filters).map((set) => [...set]).flat());
 
 watch(() => allFilters.value, () => {
-    browserStore.filters = allFilters.value;
+    timelineStore.filters = allFilters.value;
 }, {
     deep: true
 });

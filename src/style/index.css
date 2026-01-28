@@ -4,3 +4,18 @@
 @import "@/style/length.css";
 @import "@/style/fonts.css";
 @import "@/style/misc.css";
+
+
+
+.tag-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    background: var(--color-primary-softest);
+    padding: 0 var(--length-xxs);
+    border-radius: var(--radius-m);
+    transition: background var(--transition-default);
+
+    &:hover {
+        background: var(--color-primary-soft);
+    }
+}

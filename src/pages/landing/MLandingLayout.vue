@@ -19,7 +19,7 @@ const links: Array<ButtonProps> = [
     {
         label: "Chronologie",
         icon: "lucide:calendars",
-        to: "/browser"
+        to: "/timeline/mlepen"
     },
     {
         label: "À propos",

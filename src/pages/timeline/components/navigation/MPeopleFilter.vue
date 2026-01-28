@@ -24,11 +24,11 @@ import type { DropdownMenuItem } from "@nuxt/ui";
 import { computed } from "vue";
 
 import { useDataStore } from "@/data/store.ts";
-import { useBrowserStore } from "@/pages/browser/store.ts";
+import { useTimelineStore } from "@/pages/timeline/store.ts";
 import type { TPerson } from "@/types/people.ts";
 
 const dataStore = useDataStore();
-const browserStore = useBrowserStore();
+const timelineStore = useTimelineStore();
 
 const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.people)
     .map(([key, person]) => ({
@@ -37,13 +37,13 @@ const items = computed<Array<DropdownMenuItem>>(() => Object.entries(dataStore.p
             src: person.photo
         },
         description: dataStore.groups[person.group]?.name,
-        onSelect: () => {
-            browserStore.selectedPerson = key;
+        onSelect: async () => {
+            await timelineStore.setPerson(key);
         }
     }))
 );
 
-const selectedPerson = computed<TPerson | undefined>(() => dataStore.people[browserStore.selectedPerson]);
+const selectedPerson = computed<TPerson | undefined>(() => dataStore.people[timelineStore.selectedPerson]);
 </script>
 
 <style scoped>

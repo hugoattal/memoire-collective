@@ -12,6 +12,7 @@
         "@nuxt/types": "^2.18.1",
         "@nuxt/ui": "^4.3.0",
         "@vueuse/core": "^14.1.0",
+        "es-toolkit": "^1.44.0",
         "front-matter": "^4.0.2",
         "marked": "^17.0.1",
         "pinia": "^3.0.4",

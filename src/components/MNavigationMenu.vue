@@ -9,7 +9,7 @@ const items: ArrayOrNested<NavigationMenuItem> = [
     {
         label: "Chronologie",
         icon: "lucide:calendars",
-        to: "/browser"
+        to: "/timeline/mlepen"
     },
     {
         label: "Documentation",

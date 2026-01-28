@@ -1,10 +1,10 @@
 ---
 title: Une trentaine de rédactions accusent le FN d'entrave à la liberté d'informer
-category: autoritarisme/presse
+categories: autoritarisme/presse
 sources:
   - name: "Délibéré dossier"
     url: "https://www.lepoint.fr/politique/liberte-de-la-presse-une-trentaine-de-redactions-accusent-le-fn-27-04-2017-2123268_20.php"
-    date: "31/03/2025"
+    date: "2025/03/31"
 
 ---
 

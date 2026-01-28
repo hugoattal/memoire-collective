@@ -3,12 +3,18 @@ import fm from "front-matter";
 import { markdown } from "@/lib/markdown.ts";
 import type { TEvent, TFilledEvent } from "@/types/event.ts";
 
-export type TEvents = Record<string, Record<string, Record<string, TFilledEvent>>>;
+export type TEvents = {
+    groups: Record<string, Record<string, TFilledEvent>>;
+    people: Record<string, Record<string, TFilledEvent>>;
+};
 
 export function fetchEvents() {
     const eventsImport: Record<string, string> = import.meta.glob("./**/**/events/**/*.md", { eager: true, import: "default", query: "?raw" });
 
-    const events: TEvents = {};
+    const events: TEvents = {
+        groups: {},
+        people: {}
+    };
 
     for (const [eventKey, eventImport] of Object.entries(eventsImport)) {
         const splitKey = eventKey.split("/");
@@ -18,9 +24,20 @@ export function fetchEvents() {
         const date = new Date(key.split("_")[0]!);
 
         const frontmatter = fm(eventImport);
+        const attributes = fm(eventImport).attributes as TEvent;
+
+        for (const field of ["sources", "links", "files", "categories"] as const) {
+            if (attributes[field] && !Array.isArray(attributes[field])) {
+                attributes[field] = [attributes[field]];
+            }
+        }
+
+        for (const source of attributes.sources ?? []) {
+            source.date = new Date(source.date);
+        }
 
         set(events, [type, owner, key], {
-            ...(fm(eventImport).attributes as TEvent),
+            ...attributes,
             body: markdown.parse(frontmatter.body),
             date,
             key
