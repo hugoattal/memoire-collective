@@ -1,7 +1,7 @@
 import fm from "front-matter";
 
 import { markdown } from "@/lib/markdown.ts";
-import type { TEvent, TFilledEvent } from "@/types/event.ts";
+import type { TEvent, TFilledEvent, TSource } from "@/types/event.ts";
 
 export type TEvents = {
     groups: Record<string, Record<string, TFilledEvent>>;
@@ -28,11 +28,11 @@ export function fetchEvents() {
 
         for (const field of ["sources", "links", "files", "categories"] as const) {
             if (attributes[field] && !Array.isArray(attributes[field])) {
-                attributes[field] = [attributes[field]];
+                attributes[field] = [attributes[field] as never];
             }
         }
 
-        for (const source of attributes.sources ?? []) {
+        for (const source of (attributes.sources as Array<TSource>)) {
             source.date = new Date(source.date);
         }
 

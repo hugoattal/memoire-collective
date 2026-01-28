@@ -17,7 +17,7 @@
                 :key="index"
             >
                 <MTag
-                    :icon="categories[category.split('/')[0]]?.icon"
+                    :icon="categories[category.split('/')[0]!]?.icon"
                     :label="capitalize(category.split('/').at(-1)!)"
                 />
             </template>

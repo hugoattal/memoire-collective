@@ -2,7 +2,7 @@ import type { TMaybeArray } from "@/types/utils.ts";
 
 export type TSource = {
     name: string;
-    date: string;
+    date: string | Date;
     url: string;
 };
 

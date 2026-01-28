@@ -14,10 +14,10 @@
 import { computed } from "vue";
 
 import MCard from "@/pages/timeline/components/form/MCard.vue";
-import type { TSource } from "@/types/event.ts";
+import type { TFilledSource } from "@/types/event.ts";
 
 const props = defineProps<{
-    source: TSource;
+    source: TFilledSource;
 }>();
 
 const name = computed(() => new URL(props.source.url).hostname);

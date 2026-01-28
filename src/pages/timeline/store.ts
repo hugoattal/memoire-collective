@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-import router from "@/router";
 import type { TFilledEvent } from "@/types/event.ts";
 
 export const useTimelineStore = defineStore(
