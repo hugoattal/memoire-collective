@@ -22,10 +22,9 @@ const links: Array<ButtonProps> = [
         to: "/timeline"
     },
     {
-        label: "À propos",
-        icon: "lucide:info",
-        color: "neutral",
-        to: "/about",
+        label: "Contribuer",
+        icon: "lucide:book",
+        to: "/contribute",
         variant: "subtle"
     }
 ];

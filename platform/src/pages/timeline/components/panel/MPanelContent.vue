@@ -28,18 +28,20 @@
             />
         </div>
         <template v-if="event.gitUrl">
-            <h2>Git</h2>
+            <h2>Contribution</h2>
             <div class="buttons">
                 <MEditButton :event="event" />
-                <UButton
-                    :href="event.gitUrl"
-                    icon="simple-icons:github"
-                    size="xs"
-                    target="_blank"
-                    variant="soft"
-                >
-                    Afficher la source sur GitHub
-                </UButton>
+                <UTooltip text="Afficher la source sur GitHub">
+                    <UButton
+                        :href="event.gitUrl"
+                        icon="simple-icons:github"
+                        size="xs"
+                        target="_blank"
+                        variant="soft"
+                    >
+                        Source
+                    </UButton>
+                </UTooltip>
             </div>
         </template>
     </div>

@@ -1,14 +1,16 @@
 <template>
-    <UButton
-        class="button"
-        icon="lucide:pencil"
-        size="xs"
-        target="_blank"
-        variant="soft"
-        @click="editEvent"
-    >
-        Ouvrir dans l'éditeur
-    </UButton>
+    <UTooltip text="Ouvrir dans l'éditeur">
+        <UButton
+            class="button"
+            icon="lucide:pencil"
+            size="xs"
+            target="_blank"
+            variant="soft"
+            @click="editEvent"
+        >
+            Éditer
+        </UButton>
+    </UTooltip>
 </template>
 
 <script setup lang="ts">

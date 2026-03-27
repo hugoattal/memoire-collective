@@ -2,52 +2,21 @@ Si vous êtes intéressé par le projet, la meilleure chose à faire est de rejo
 
 ## Créer un évènement
 
-Les évènements sont des fichiers texte au format YAML et Markdown. Voici un exemple : [2025-03-31_condamnation.md](https://github.com/hugoattal/memoire-collective/blob/main/platform/src/data/people/mlepen/events/2025/2025-03-31_condamnation.md?plain=1).
+Les évènements sont des fichiers texte au format YAML et Markdown. Vous pouvez utiliser l'[éditeur intégré](/editor) pour vous faciliter la tâche. Voici quelques conseils :
+- Garder le titre et la description courts, descriptifs et clairs
+- Concentrez-vous sur les faits, et ajouter au maximum des citations
+- Ajouter de courtes raisons à chaque catégorie de manquement
+- Pour les sources, recopier le titre et la date des liens
 
-Un évènement est défini par quatre éléments :
-- son emplacement *(qui définit à qui/quoi il se rattache, ici `people/mlepen/events/2025`)*
-- son titre *(qui contient sa date exacte et son identifiant, ici `2025-03-31_condamnation`)*
-- son en-tête *(qui définit ses propriétés, comme son titre, ses sources, etc...)*
-- son contenu *(qui décrit l'évènement)*
+Notez que le contenu de l'éditeur est enregistré en temps réel dans le navigateur, et que vous pouvez donc revenir sans tout recommencer.
 
-### L'en-tête
+## Proposer un évènement
 
-Voici à quoi ressemble l'en-tête. Il est au format [YAML](https://fr.wikipedia.org/wiki/YAML).
+Une fois votre évènement terminé, vous pouvez aux choix :
+- Cliquer sur le bouton **Soumettre** pour créer directement une [issue](https://github.com/hugoattal/memoire-collective/issues) sur GitHub.
+- Ou cliquer sur le bouton **Exporter** pour le copier/coller sur notre [serveur Discord](https://discord.gg/BpqvAhAGNq).
 
-```md
----
-title: Condamnation pour détournement de fonds publics
-categories:
-  - id: justice/detournement
-    reason: Condamnation pour détournement de fonds publics via un système de contrats fictifs d'assistants parlementaires européens.
-files: assistants-parlementaires-fn-parlement-europeen
-sources:
-  - name: "Délibéré dossier"
-    url: "https://infographics.mediapart.fr/hubs/assets/documents/proces-le-pen/attendus-jugement-rn-31-mars.pdf"
-    date: "2025/03/31"
-
----
-```
-
-Différents champs peuvent être remplis :
-- `title` : Le titre de cet évènement
-- `categories` : La ou les catégories de cet évènement. Chaque catégorie est un objet contenant un `id` (ex: `justice/detournement`) et un `reason` expliquant brièvement le choix de cette catégorie.
-- `sources` : La ou les sources
-- `files?` : La ou les affaires auxquelles cet évènement est lié
-- `links?` : Le ou les évènements liés à cet évènement
-- `timestamp?` : Une date précise de cet évènement (s'il doit être placé précisément dans la journée)
-
-Les propriétés avec un `?` sont optionnelles.
-
-### Le contenu
-
-Voici à quoi ressemble le contenu. Il est au format [Markdown](https://fr.wikipedia.org/wiki/Markdown).
-
-```md
-@mlepen est condamnée par le tribunal correctionnel de Paris à **quatre ans de prison** (dont deux avec sursis), **100 000 euros d'amende** et **cinq ans d'inéligibilité** (exécutée immédiatement) pour avoir organisé entre 2009 et 2016, un système de contrats fictifs d'assistants parlementaires européens, détournant plus de **4,4 millions d'euros** au profit de son parti.
-```
-
-Pour tagger des personnes, des partis ou des affaires, utilisez `@` suivi de leur identifiant.
+Votre évènement sera relu et publié en ligne après validation.
 
 ## Modifier la plateforme
 

@@ -1,12 +1,19 @@
 <template>
-    <div class="tag">
-        <UIcon
-            v-if="icon"
-            class="icon"
-            :name="icon"
+    <UTooltip
+        :disabled="small"
+        :ui="{content: 'max-w-xs h-auto', text: 'whitespace-normal'}"
+    >
+        <template #content>
+            {{ tooltip }}
+        </template>
+        <UBadge
+            class="category-tag"
+            :class="{small}"
+            :icon="icon"
+            :label="label"
+            size="sm"
         />
-        {{ label }}
-    </div>
+    </UTooltip>
 </template>
 
 <script setup lang="ts">
@@ -17,26 +24,27 @@ import { categories } from "@/data/categories.ts";
 
 const props = defineProps<{
     categoryId: string;
+    small?: boolean;
 }>();
 
-const icon = computed(() => categories[props.categoryId.split("/")[0]!]?.icon);
+const category = computed(() => props.categoryId.split("/")[0]);
+const children = computed(() => props.categoryId.split("/")[1]);
+
+const tooltip = computed(() => {
+    if (!children.value) {
+        return;
+    }
+
+    return categories[category.value].children[children.value].description;
+});
+
+const icon = computed(() => categories[category.value]?.icon);
 const label = computed(() => capitalize(props.categoryId.split("/").at(-1)!));
 </script>
 
 <style scoped>
-.tag {
-    display: inline-flex;
-    font-size: var(--font-size-xxs);
-    padding: var(--length-xxxxs) var(--length-xxs);
-    background: var(--color-primary);
-    color: var(--color-text-inverted);
-    border-radius: var(--radius-s);
-    gap: var(--length-xxs);
-    align-items: center;
-
-    .icon {
-        font-size: var(--font-icon-xxs);
-
-    }
+.category-tag.small {
+    padding: var(--length-xxxs) var(--length-xxs);
 }
+
 </style>

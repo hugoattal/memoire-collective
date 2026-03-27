@@ -6,6 +6,7 @@
         <UPageBody>
             <div
                 class="content"
+                @click="handleLinkClick"
                 v-html="$md(markdown)"
             />
         </UPageBody>
@@ -13,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+import { handleLinkClick } from "@/lib/utils.ts";
+
 defineProps<{
     title: string;
     markdown: string;

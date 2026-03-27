@@ -4,38 +4,43 @@
         description="Créer un évènement au format markdown rapidement"
         title="Éditeur d'évènement"
     >
-        <div class="buttons">
-            <UTooltip text="Réinitialiser le formulaire">
-                <UButton
-                    icon="lucide:rotate-ccw"
-                    label="Réinitialiser"
-                    variant="soft"
-                    @click="resetForm"
-                />
-            </UTooltip>
-            <UTooltip text="Importer depuis le presse-papier">
-                <UButton
-                    icon="lucide:import"
-                    label="Importer"
-                    variant="soft"
-                    @click="importMarkdown"
-                />
-            </UTooltip>
-            <UTooltip text="Exporter dans le presse-papier">
-                <UButton
-                    icon="lucide:clipboard"
-                    label="Exporter"
-                    variant="soft"
-                    @click="exportMarkdown"
-                />
-            </UTooltip>
-            <UTooltip text="Soumettre l'évènement sur GitHub">
-                <UButton
-                    icon="lucide:github"
-                    label="Soumettre"
-                    @click="openIssue"
-                />
-            </UTooltip>
+        <div class="tools">
+            <div class="buttons">
+                <UTooltip text="Réinitialiser le formulaire">
+                    <UButton
+                        icon="lucide:rotate-ccw"
+                        label="Réinitialiser"
+                        variant="soft"
+                        @click="resetForm"
+                    />
+                </UTooltip>
+                <UTooltip text="Importer depuis le presse-papier">
+                    <UButton
+                        icon="lucide:import"
+                        label="Importer"
+                        variant="soft"
+                        @click="importMarkdown"
+                    />
+                </UTooltip>
+                <UTooltip text="Exporter dans le presse-papier">
+                    <UButton
+                        icon="lucide:clipboard"
+                        label="Exporter"
+                        variant="soft"
+                        @click="exportMarkdown"
+                    />
+                </UTooltip>
+                <UTooltip text="Soumettre l'évènement sur GitHub">
+                    <UButton
+                        icon="lucide:github"
+                        label="Soumettre"
+                        @click="openIssue"
+                    />
+                </UTooltip>
+            </div>
+            <div class="info">
+                Le contenu de cette page est automatiquement sauvegardé dans votre navigateur.
+            </div>
         </div>
         <MEditor />
     </UPageSection>
@@ -114,8 +119,19 @@ function openIssue() {
 </script>
 
 <style scoped>
-.buttons {
+.tools {
     display: flex;
-    gap: var(--length-s);
+    flex-direction: column;
+    gap: var(--length-xs);
+
+    .buttons {
+        display: flex;
+        gap: var(--length-s);
+    }
+
+    .info {
+        font-size: var(--font-size-s);
+        color: var(--color-text-softer);
+    }
 }
 </style>

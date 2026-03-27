@@ -15,7 +15,31 @@
                 :key="category.id"
                 class="category-card"
             >
-                <div><MCategoryTag :category-id="category.id" /> :</div>
+                <div class="title">
+                    <div class="tag">
+                        <MCategoryTag
+                            :category-id="category.id"
+                            class="tag"
+                        />
+                    </div>
+                    <UTooltip
+                        v-if="category.reason.length > 100"
+                        text="Votre raison est un peu trop longue, essayez de la réduire un peu."
+                    >
+                        <UBadge
+                            icon="lucide:triangle-alert"
+                            :label="`Un peu trop long ${category.reason.length}/100`"
+                            size="sm"
+                            variant="subtle"
+                        />
+                    </UTooltip>
+                    <UButton
+                        icon="lucide:trash"
+                        size="xxs"
+                        variant="ghost"
+                        @click="removeCategory(category.id)"
+                    />
+                </div>
                 <UInput
                     v-model="category.reason"
                     class="input"
@@ -75,6 +99,10 @@ watch(() => categoriesValue, () => {
 }, {
     deep: true
 });
+
+function removeCategory(categoryId: string) {
+    editorEvent.value.categories = editorEvent.value.categories.filter((category) => category.id !== categoryId);
+}
 </script>
 
 <style scoped>
@@ -101,6 +129,16 @@ watch(() => categoriesValue, () => {
             display: flex;
             flex-direction: column;
             gap: var(--length-xxs);
+
+            .title {
+                display: flex;
+                gap: var(--length-xxs);
+                align-items: center;
+
+                .tag {
+                    flex: 1;
+                }
+            }
 
             &:deep(.input) {
                 width: 100%;

@@ -17,7 +17,7 @@ export const navigationItems: ArrayOrNested<NavigationMenuItem> = [
         to: "/about"
     },
     {
-        label: "Editeur",
+        label: "Éditeur",
         icon: "lucide:pencil-ruler",
         to: "/editor"
     }

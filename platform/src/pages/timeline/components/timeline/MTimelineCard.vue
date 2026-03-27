@@ -18,7 +18,10 @@
                 v-for="(category, index) in event.categories"
                 :key="index"
             >
-                <MCategoryTag :category-id="category.id" />
+                <MCategoryTag
+                    :category-id="category.id"
+                    small
+                />
             </template>
         </template>
     </MCard>
