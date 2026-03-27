@@ -42,6 +42,8 @@
 </template>
 
 <script setup lang="ts">
+import { useToast } from "@nuxt/ui/composables/useToast";
+
 import { parseEvent } from "@/data/events.ts";
 import MEditor from "@/pages/editor/components/MEditor.vue";
 import { exportToMarkdown } from "@/pages/editor/lib/export.ts";
