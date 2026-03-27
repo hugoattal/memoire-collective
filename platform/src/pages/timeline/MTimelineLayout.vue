@@ -6,7 +6,10 @@
             class="timeline"
             :events="eventsArray"
         />
-        <MPanel class="panel" />
+        <MPanel
+            class="panel"
+            :event="selectedEvent"
+        />
     </div>
 </template>
 
@@ -21,6 +24,8 @@ import { useTimelineStore } from "@/pages/timeline/store.ts";
 
 const dataStore = useDataStore();
 const timelineStore = useTimelineStore();
+
+const selectedEvent = computed(() => dataStore.events.all?.[timelineStore.selectedEvent]);
 
 const eventsArray = computed(() => {
     let events = dataStore.events["people"]?.[timelineStore.selectedPerson];
@@ -48,6 +53,10 @@ const eventsArray = computed(() => {
 
     .timeline {
         flex: 1 0 50%;
+    }
+
+    .panel {
+        max-height: 80dvh;
     }
 }
 </style>

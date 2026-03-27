@@ -8,7 +8,7 @@
         "sort-package": "pnpm --recursive --parallel exec sort-package-json package.json"
     },
     "devDependencies": {
-        "npm-check-updates": "^19.3.2",
+        "npm-check-updates": "^19.6.6",
         "sort-package-json": "^3.6.1"
     },
     "pnpm": {

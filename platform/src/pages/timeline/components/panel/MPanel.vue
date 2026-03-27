@@ -2,7 +2,7 @@
     <div
         v-if="isDesktop"
         class="panel"
-        :class="{open: event}"
+        :class="{open: !!event}"
         @click="handleLinkClick"
     >
         <MPanelContent :event="event" />
@@ -19,27 +19,28 @@
 
 <script setup lang="ts">
 import { whenever } from "@vueuse/core";
-import { computed, ref, watch } from "vue";
+import { ref } from "vue";
 
-import { useDataStore } from "@/data/store.ts";
 import { isDesktop } from "@/lib/utils.ts";
 import MPanelContent from "@/pages/timeline/components/panel/MPanelContent.vue";
 import { useTimelineStore } from "@/pages/timeline/store.ts";
 import { handleLinkClick } from "@/router/handle.ts";
+import type { TFilledEvent } from "@/types/event.ts";
+
+const props = defineProps<{
+    event?: TFilledEvent;
+}>();
 
 const timelineStore = useTimelineStore();
-const dataStore = useDataStore();
 
-const event = computed(() => dataStore.events.all?.[timelineStore.selectedEvent]);
 const openedPanel = ref(false);
 
-watch(event, () => {
-    if (event.value) {
-        openedPanel.value = true;
-    }
+whenever(() => props.event, () => {
+    openedPanel.value = true;
 }, {
     immediate: true
 });
+
 whenever(() => !openedPanel.value, async () => await timelineStore.deselectEvent());
 </script>
 
@@ -48,7 +49,6 @@ whenever(() => !openedPanel.value, async () => await timelineStore.deselectEvent
     flex: 0 0 0;
     transition: flex-basis var(--transition-default);
     padding: var(--length-m) var(--length-xl);
-    max-height: 80dvh;
     overflow-y: scroll;
 
     &.open {

@@ -21,7 +21,7 @@ sources:
     url: "https://www.nouvelobs.com/monde/20260204.OBS112123/sommet-transatlantique-des-reacs-a-bruxelles-tapis-rouge-pour-les-trumpistes-le-rn-fait-profil-bas.html"
     date: "2026/02/04"
 ---
-@jbardella et @mmaréchal ont coorganisé au Parlement européen un *« sommet transatlantique »* réunissant des proches de l’administration Trump et des figures de l’internationale réactionnaire, dont :
+@jbardella et @mmarechal ont coorganisé au Parlement européen un *« sommet transatlantique »* réunissant des proches de l’administration Trump et des figures de l’internationale réactionnaire, dont :
 - Des membres de la **Heritage Foundation** (think-tank à l’origine du programme politique de Trump),
 - **Santiago Abascal** (dirigeant d’extrême droite espagnol niant les violences conjugales et comparant l’homosexualité à la zoophilie),
 - **Sharon Slater** (lobbyiste chrétienne fondamentaliste opposée à l’IVG, assimilant l’homosexualité à un trouble mental),

@@ -15,11 +15,18 @@
                 @click="handleLinkClick"
             >
                 <div class="header">
-                    <UAvatar
-                        v-if="avatar"
-                        class="avatar"
-                        :src="avatar"
-                    />
+                    <UAvatarGroup size="md">
+                        <UAvatar
+                            v-if="avatar"
+                            class="avatar"
+                            :src="avatar"
+                        />
+                        <UAvatar
+                            v-if="groupAvatar"
+                            class="avatar"
+                            :src="groupAvatar"
+                        />
+                    </UAvatarGroup>
                     <div class="name">
                         {{ name }}
                     </div>
@@ -33,7 +40,7 @@
                 />
                 <div
                     class="content"
-                    v-html="parseTag(body)"
+                    v-html="parseTag($md(body))"
                 />
                 <div
                     v-if="$slots.tags"
@@ -57,6 +64,7 @@ const props = defineProps<{
     avatar?: string;
     body: string;
     date: Date;
+    groupAvatar?: string;
 }>();
 </script>
 
@@ -101,16 +109,12 @@ const props = defineProps<{
             flex-direction: column;
             gap: var(--length-xxs);
             overflow: hidden;
+            flex: 1 1 auto;
 
             .header {
                 display: flex;
                 align-items: center;
                 gap: var(--length-xxs);
-
-                .avatar {
-                    width: 16px;
-                    height: 16px;
-                }
 
                 .name {
                     flex: 1 1 auto;

@@ -15,7 +15,7 @@ sources:
     url: "https://www.20minutes.fr/politique/4198620-20260128-melenchon-veut-ramener-russie-concert-europeen-rouvrir-gazoducs-nord-stream"
     date: "2026/01/28"
 ---
-@melenchon propose, lors d'une conférence devant des élus et militants de @lfi, de **« ramener la Russie dans le concert européen »** et de **« remettre en route »** les gazoducs **Nord Stream**, sabotés en 2022.
+@jlmelenchon propose, lors d'une conférence devant des élus et militants de @lfi, de **« ramener la Russie dans le concert européen »** et de **« remettre en route »** les gazoducs **Nord Stream**, sabotés en 2022.
 
 Il suggère par ailleurs d’organiser un **référendum** dans le **Donbass** et le **sud de l’Ukraine** pour déterminer le sort de ces territoires, évoquant la possibilité de **« céder des territoires »** à la Russie. Il réaffirme son opposition à l’**expulsion de la Russie de l’Europe**.
 

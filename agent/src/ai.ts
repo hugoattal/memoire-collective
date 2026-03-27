@@ -2,26 +2,21 @@ import { Mistral } from "@mistralai/mistralai";
 
 const apiKey = process.env.MISTRAL_API_KEY!;
 
-export async function processAi(instructions: {system: string, user: string}) {
+export async function processAi(instructions: { system: string; user: string; }) {
     const client = new Mistral({ apiKey });
     const chatResponse = await client.chat.complete({
-        model: "mistral-large-latest",
         messages: [
             {
-                role: "system",
                 content: instructions.system,
+                role: "system"
             },
             {
-                role: "user",
                 content: instructions.user,
-            },
+                role: "user"
+            }
         ],
+        model: "mistral-large-latest"
     });
 
     return chatResponse.choices![0].message.content as string;
 }
-
-
-
-
-

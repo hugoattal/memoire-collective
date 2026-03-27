@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -26,12 +27,12 @@ const routes: Array<RouteRecordRaw> = [
         path: "/timeline/:person?/:event?"
     },
     {
-        name: "documentation",
-        component: () => import("@/pages/documentation/MDocumentationLayout.vue"),
+        name: "editor",
+        component: () => import("@/pages/editor/MEditorLayout.vue"),
         meta: {
-            title: "Documentation"
+            title: "Editeur"
         },
-        path: "/documentation"
+        path: "/editor"
     },
     {
         name: "about",

@@ -1,21 +1,20 @@
 import fm from "front-matter";
 
-import { markdown } from "@/lib/markdown.ts";
 import type { TEvent, TFilledEvent, TSource } from "@/types/event.ts";
 
 export type TEvents = {
+    all: Record<string, TFilledEvent>;
     groups: Record<string, Record<string, TFilledEvent>>;
     people: Record<string, Record<string, TFilledEvent>>;
-    all: Record<string, TFilledEvent>;
 };
 
 export function fetchEvents() {
     const eventsImport: Record<string, string> = import.meta.glob("./**/**/events/**/*.md", { eager: true, import: "default", query: "?raw" });
 
     const events: TEvents = {
+        all: {},
         groups: {},
-        people: {},
-        all: {}
+        people: {}
     };
 
     for (const [eventKey, eventImport] of Object.entries(eventsImport)) {
@@ -25,22 +24,8 @@ export function fetchEvents() {
         const key = splitKey[5]!.split(".")[0]!;
         const date = new Date(key.split("_")[0]!);
 
-        const frontmatter = fm(eventImport);
-        const attributes = fm(eventImport).attributes as TEvent;
-
-        for (const field of ["sources", "links", "files", "categories"] as const) {
-            if (attributes[field] && !Array.isArray(attributes[field])) {
-                attributes[field] = [attributes[field] as never];
-            }
-        }
-
-        for (const source of (attributes.sources as Array<TSource>)) {
-            source.date = new Date(source.date);
-        }
-
         const event = {
-            ...attributes,
-            body: markdown.parse(frontmatter.body) as string,
+            ...parseEvent(eventImport),
             date,
             gitUrl: `https://github.com/hugoattal/memoire-collective/edit/main/platform/src/data${ eventKey.slice(1) }`,
             key,
@@ -67,4 +52,21 @@ function set(target: Record<string, unknown>, path: Array<string>, value: unknow
     }
 
     set(target[head!] as Record<string, unknown>, tail, value);
+}
+
+export function parseEvent(markdown: string) {
+    const frontmatter = fm(markdown);
+    const attributes = fm(markdown).attributes as TEvent;
+
+    for (const field of ["sources", "links", "files", "categories"] as const) {
+        if (attributes[field] && !Array.isArray(attributes[field])) {
+            attributes[field] = [attributes[field] as never];
+        }
+    }
+
+    for (const source of (attributes.sources as Array<TSource>)) {
+        source.date = new Date(source.date);
+    }
+
+    return { ...attributes, body: frontmatter.body } as Partial<TFilledEvent>;
 }

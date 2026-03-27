@@ -39,7 +39,7 @@ export type TFilledEvent = TEvent & {
     body: string;
     categories?: Array<TCategory>;
     date: Date;
-    gitUrl: string;
+    gitUrl?: string;
     key: string;
     links?: Array<TSource>;
     owner: string;

@@ -17,7 +17,7 @@
         <h2>Description</h2>
         <div
             class="content"
-            v-html="parseTag(event.body)"
+            v-html="parseTag($md(event.body))"
         />
         <h2>Sources</h2>
         <div class="sources">
@@ -27,21 +27,27 @@
                 :source="source"
             />
         </div>
-        <h2>Git</h2>
-        <UButton
-            :href="event.gitUrl"
-            icon="lucide:pencil"
-            size="xs"
-            target="_blank"
-            variant="soft"
-        >
-            Éditer la source sur GitHub
-        </UButton>
+        <template v-if="event.gitUrl">
+            <h2>Git</h2>
+            <div class="buttons">
+                <MEditButton :event="event" />
+                <UButton
+                    :href="event.gitUrl"
+                    icon="simple-icons:github"
+                    size="xs"
+                    target="_blank"
+                    variant="soft"
+                >
+                    Afficher la source sur GitHub
+                </UButton>
+            </div>
+        </template>
     </div>
 </template>
 
 <script setup lang="ts">
 import MCategoryTag from "@/pages/timeline/components/form/MCategoryTag.vue";
+import MEditButton from "@/pages/timeline/components/panel/MEditButton.vue";
 import MSource from "@/pages/timeline/components/panel/MSource.vue";
 import { parseTag } from "@/pages/timeline/lib/markdown.ts";
 import type { TFilledEvent } from "@/types/event.ts";
@@ -85,12 +91,31 @@ defineProps<{
         &:deep(p) {
             margin: var(--length-s) 0;
         }
-    }
-}
 
-.sources {
-    display: flex;
-    flex-direction: column;
-    gap: var(--length-s);
+        &:deep(ul) {
+            margin: var(--length-s) 0;
+            padding-left: var(--length-m);
+            list-style-type: disc;
+
+            li {
+                margin: var(--length-xs) 0;
+
+                &::marker {
+                    color: var(--color-text-softest);
+                }
+            }
+        }
+    }
+
+    .sources {
+        display: flex;
+        flex-direction: column;
+        gap: var(--length-s);
+    }
+
+    .buttons {
+        display: flex;
+        gap: var(--length-s);
+    }
 }
 </style>

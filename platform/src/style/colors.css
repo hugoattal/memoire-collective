@@ -9,4 +9,7 @@
     --color-text: var(--ui-text);
 
     --color-text-inverted: var(--ui-text-inverted);
+
+    --color-background: var(--ui-bg);
+    --color-background-soft: var(--ui-bg-elevated);
 }

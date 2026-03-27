@@ -20,7 +20,14 @@ const props = defineProps<{
     source: TFilledSource;
 }>();
 
-const name = computed(() => new URL(props.source.url).hostname);
+const name = computed(() => {
+    try {
+        return new URL(props.source.url).hostname;
+    }
+    catch {
+        return "URL invalide";
+    }
+});
 
 function openUrl() {
     window.open(props.source.url, "_blank");

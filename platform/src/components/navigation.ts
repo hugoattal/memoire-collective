@@ -7,9 +7,9 @@ export const navigationItems: ArrayOrNested<NavigationMenuItem> = [
         to: "/timeline"
     },
     {
-        label: "Documentation",
+        label: "Contribuer",
         icon: "lucide:book",
-        to: "/documentation"
+        to: "/contribute"
     },
     {
         label: "À propos",
@@ -17,8 +17,8 @@ export const navigationItems: ArrayOrNested<NavigationMenuItem> = [
         to: "/about"
     },
     {
-        label: "Contribuer",
+        label: "Editeur",
         icon: "lucide:pencil-ruler",
-        to: "/contribute"
+        to: "/editor"
     }
 ];

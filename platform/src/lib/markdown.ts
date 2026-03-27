@@ -6,6 +6,6 @@ renderer.link = ({ title, href, text }) => {
 };
 
 export const markdown = {
-    parse: (content: string) => marked.parse(content, { breaks: true, gfm: true, renderer }),
-    parseInline: (content: string) => marked.parseInline(content, { breaks: true, gfm: true, renderer })
+    parse: (content: string) => marked.parse(content, { breaks: true, gfm: true, renderer, silent: true }) as string,
+    parseInline: (content: string) => marked.parseInline(content, { breaks: true, gfm: true, renderer, silent: true }) as string
 };

@@ -7,7 +7,7 @@
         "digest": "node --import tsx --import ./loader-register.js --env-file=.env src/digest.ts"
     },
     "dependencies": {
-        "@mistralai/mistralai": "^1.14.1",
+        "@mistralai/mistralai": "^2.1.2",
         "cheerio": "^1.2.0",
         "es-toolkit": "^1.45.1",
         "playwright": "^1.58.2",
@@ -15,10 +15,10 @@
     },
     "devDependencies": {
         "@luna-park/eslint-config": "^1.2.4",
-        "@types/node": "^25.3.5",
-        "eslint": "^10.0.3",
-        "typescript": "^5.9.3",
-        "typescript-eslint": "^8.57.0",
+        "@types/node": "^25.5.0",
+        "eslint": "^10.1.0",
+        "typescript": "^6.0.2",
+        "typescript-eslint": "^8.57.2",
         "vite": "npm:rolldown-vite@7.3.1"
     }
 }

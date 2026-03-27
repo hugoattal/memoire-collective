@@ -7,6 +7,7 @@
         :class="{selected}"
         :data-event="event.key"
         :date="event.date"
+        :group-avatar="dataStore.groups[owner.group]?.logo"
         :icon="icon"
         :name="owner.name"
         :title="event.title"
